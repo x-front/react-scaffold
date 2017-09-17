@@ -1,10 +1,15 @@
 .news-nav{
-    background-color: #F2F4F1;
-    height: 1rem;
+    background-color: #fff;
+    height: 70px;
+    position: relative;
 
     ul {
         overflow-x: auto;
         white-space: nowrap;
+    }
+
+    ul::-webkit-scrollbar {
+        display:none;
     }
     
     li {
@@ -12,14 +17,27 @@
         color:#B2B4B1;
         margin:0.1rem 0.2rem;
         font-size: 0.4rem;
+        padding:0.1rem 0.3rem;
 
         &.current {
             background-color: #D83645;
             border-radius: 4px;
-            padding:0.1rem 0.3rem;
             color: #fff;
         }
     }
 
+    .plus {
+        position: absolute;
+        right:0;
+        top:0;
+        font-size: 1rem;
+        background-color: #fff;
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+        color:#B2B4B1;
+        border-radius: 30px;
+    }
 
 }
