@@ -3,33 +3,68 @@ import classNames from 'classnames';
 import './edit-nav.less';
 
 export default React.createClass({
+    getInitialState(){
+        return {
+            myChannelList : this.props.navlist,
+            SuggestChannelList : [
+                { text: '+热点' },
+                { text: '+东莞' },
+                { text: '+小视频' },
+                { text: '+时尚' },
+                { text: '+历史' },
+                { text: '+育儿' },
+                { text: '+直播' },
+                { text: '+搞笑' },
+                { text: '+数码' },
+                { text: '+美食' },
+                { text: '+养生' },
+                { text: '+电影' },
+                { text: '+手机' },
+                { text: '+旅游' },
+                { text: '+宠物' },
+                { text: '+情感' },
+            ],
+        };
+    },
+    //隐藏菜单编辑面板
     handleHide(){
         this.props.hide();
     },
+    //点击添加到我的频道
+    addChannel(evl,idx){
+        //获取当前点击的频道序号
+        let curSelected = idx.split('$')[1]-0;
+        //获取当前点击的频道
+        let addedChannel = this.state.SuggestChannelList[curSelected];
+        //把当前点击的频道推入我的频道 为什么不能直接往数组里推？不是数组？
+        //用map将myChannelList转为数组
+        let newMyChannel =  this.state.myChannelList.map((item) =>{
+            return item;
+        });
+        //把当前点击的频道推入newMyChannel数组
+        newMyChannel.push(addedChannel);
+
+        //删除推荐频道中当前点击的频道
+        let newSuggestChannel = [];
+        this.state.SuggestChannelList.forEach((item) => {
+            if(item.text !== addedChannel.text){
+                newSuggestChannel.push(item);
+            }   
+        });
+
+        //为什么通过setState设置？不能在67、75行直接用this.new直接用？
+        this.setState({
+            myChannelList : newMyChannel,
+            SuggestChannelList : newSuggestChannel
+        });
+    },
 
     render() {
-        let myChanelList = this.props.navlist;
-        const SuggestChannelList = [
-            { text: '+热点' },
-            { text: '+东莞' },
-            { text: '+小视频' },
-            { text: '+时尚' },
-            { text: '+历史' },
-            { text: '+育儿' },
-            { text: '+直播' },
-            { text: '+搞笑' },
-            { text: '+数码' },
-            { text: '+美食' },
-            { text: '+养生' },
-            { text: '+电影' },
-            { text: '+手机' },
-            { text: '+旅游' },
-            { text: '+宠物' },
-            { text: '+情感' }
-        ];
+        //定义菜单列表 可以在render外定义变量吗？
+
         //console.log(myChanelList,SuggestChannelList);
         
-        let myChanelItem = myChanelList.map((item,index) => {
+        let myChanelItem = this.state.myChannelList.map((item,index) => {
             return (
                 <span key={index}>
                     {item.text}
@@ -37,15 +72,15 @@ export default React.createClass({
             );
         });
 
-        let SuggestChannelItem = SuggestChannelList.map((item,index) => {
+        let SuggestChannelItem = this.state.SuggestChannelList.map((item,index) => {
             return (
-                <span key={index}>
+                <span key={index} onClick={this.addChannel}>
                     {item.text}
                 </span>
             );
         });
 
-        console.log(myChanelItem,SuggestChannelItem);
+        //console.log(myChanelItem,SuggestChannelItem);
 
         return (
             <section className={classNames("editnav",{ 'show': this.props.show })}>
