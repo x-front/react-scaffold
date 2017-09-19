@@ -44,7 +44,7 @@ export default React.createClass({
                     {navitem}
                 </ul>
                 <span className="plus" onClick={this.showStatus}>+</span>
-                <EditNav show={this.state.show} hide={this.hideStatus}></EditNav>
+                <EditNav show={this.state.show} hide={this.hideStatus} navlist={this.props.navlist}></EditNav>
             </section>
         );
     },
