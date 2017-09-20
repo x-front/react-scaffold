@@ -7,36 +7,82 @@ export default React.createClass({
         return {
             myChannelList : this.props.navlist,
             SuggestChannelList : [
-                { text: '+热点' },
-                { text: '+东莞' },
-                { text: '+小视频' },
-                { text: '+时尚' },
-                { text: '+历史' },
-                { text: '+育儿' },
-                { text: '+直播' },
-                { text: '+搞笑' },
-                { text: '+数码' },
-                { text: '+美食' },
-                { text: '+养生' },
-                { text: '+电影' },
-                { text: '+手机' },
-                { text: '+旅游' },
-                { text: '+宠物' },
-                { text: '+情感' },
+                { text: '热点' },
+                { text: '东莞' },
+                { text: '小视频' },
+                { text: '时尚' },
+                { text: '历史' },
+                { text: '育儿' },
+                { text: '直播' },
+                { text: '搞笑' },
+                { text: '数码' },
+                { text: '美食' },
+                { text: '养生' },
+                { text: '电影' },
+                { text: '手机' },
+                { text: '旅游' },
+                { text: '宠物' },
+                { text: '情感' },
             ],
+            btnEditText : '编辑',
         };
     },
+    
     //隐藏菜单编辑面板
     handleHide(){
         this.props.hide();
     },
-    //点击添加到我的频道
+
+    //改变我的频道编辑按钮文字
+    btnEdit(){
+        if(this.state.btnEditText === '编辑'){
+            this.setState({
+                btnEditText: '完成'
+            });
+        } else {
+            this.setState({
+                btnEditText: '编辑'
+            });
+        }
+    },
+
+    //编辑我的频道
+    editMyChannel(evl,idx){
+        if(this.state.btnEditText === '完成'){
+            //获取当前点击的频道序号
+            let curSelected = idx.split('$')[1]-0;
+            //获取我的频道中当前点击的频道
+            let deletedChannel = this.state.myChannelList[curSelected];
+            //把当前点击的频道推入推荐频道 为什么不能直接往数组里推？不是数组？—— this.state不能直接操作
+            let newSuggestChannel =  this.state.SuggestChannelList.map((item) =>{
+                return item;
+            });
+            //把当前点击的频道推入新的推荐频道数组
+            newSuggestChannel.push(deletedChannel);
+
+            //删除我的频道中当前点击的频道
+            let newMyChannel = [];
+            this.state.myChannelList.forEach((item) => {
+                if(item.text !== deletedChannel.text){
+                    newMyChannel.push(item);
+                }   
+            });
+
+            //React必须通过state去刷新
+            this.setState({
+                myChannelList : newMyChannel,
+                SuggestChannelList : newSuggestChannel
+            });
+        }
+    },
+    
+    //推荐频道点击添加到我的频道
     addChannel(evl,idx){
         //获取当前点击的频道序号
         let curSelected = idx.split('$')[1]-0;
         //获取当前点击的频道
         let addedChannel = this.state.SuggestChannelList[curSelected];
-        //把当前点击的频道推入我的频道 为什么不能直接往数组里推？不是数组？
+        //把当前点击的频道推入我的频道 为什么不能直接往数组里推？不是数组？—— this.state不能直接操作
         //用map将myChannelList转为数组
         let newMyChannel =  this.state.myChannelList.map((item) =>{
             return item;
@@ -52,45 +98,42 @@ export default React.createClass({
             }   
         });
 
-        //为什么通过setState设置？不能在67、75行直接用this.new直接用？
+        //React必须通过state去刷新
         this.setState({
             myChannelList : newMyChannel,
             SuggestChannelList : newSuggestChannel
         });
     },
 
-    render() {
-        //定义菜单列表 可以在render外定义变量吗？
 
-        //console.log(myChanelList,SuggestChannelList);
-        
+    render() {
         let myChanelItem = this.state.myChannelList.map((item,index) => {
             return (
-                <span key={index}>
+                <span key={index} className="chanelWrap" onClick={this.editMyChannel}>
                     {item.text}
+                    <label className="delChannel">X</label>
                 </span>
             );
         });
 
         let SuggestChannelItem = this.state.SuggestChannelList.map((item,index) => {
             return (
-                <span key={index} onClick={this.addChannel}>
-                    {item.text}
+                <span key={index} onClick={this.addChannel} className="chanelWrap">
+                    {'+'+item.text}
                 </span>
             );
         });
 
-        //console.log(myChanelItem,SuggestChannelItem);
 
         return (
             <section className={classNames("editnav",{ 'show': this.props.show })}>
                 <div className="close" onClick={this.handleHide}>X</div>
                 <div className="myChanel">
-                    <div className="myChanelHeader">
+                    <ul className="myChanelHeader">
                         <span className="title">我的频道</span>
                         <span className="click">点击进入频道</span>
-                        <span className="edit">编辑</span>
-                    </div>
+                        <span className="edit" onClick={this.btnEdit}>{this.state.btnEditText}</span>
+                    </ul>
                     <div className="mychanelList">
                         {myChanelItem}
                     </div>
