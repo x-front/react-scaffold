@@ -25,6 +25,7 @@ export default React.createClass({
                 { text: '情感' },
             ],
             btnEditText : '编辑',
+            iconClose: false
         };
     },
     
@@ -33,15 +34,17 @@ export default React.createClass({
         this.props.hide();
     },
 
-    //改变我的频道编辑按钮文字
+    //点击我的频道编辑按钮
     btnEdit(){
         if(this.state.btnEditText === '编辑'){
             this.setState({
-                btnEditText: '完成'
+                btnEditText: '完成',
+                iconClose: true
             });
         } else {
             this.setState({
-                btnEditText: '编辑'
+                btnEditText: '编辑',
+                iconClose: false
             });
         }
     },
@@ -111,7 +114,7 @@ export default React.createClass({
             return (
                 <span key={index} className="chanelWrap" onClick={this.editMyChannel}>
                     {item.text}
-                    <label className="delChannel">X</label>
+                    <label className={classNames("delChannel",{'iconClose':this.state.iconClose})}>X</label>
                 </span>
             );
         });
@@ -119,7 +122,7 @@ export default React.createClass({
         let SuggestChannelItem = this.state.SuggestChannelList.map((item,index) => {
             return (
                 <span key={index} onClick={this.addChannel} className="chanelWrap">
-                    {'+'+item.text}
+                    {'+ '+item.text}
                 </span>
             );
         });
@@ -127,7 +130,7 @@ export default React.createClass({
 
         return (
             <section className={classNames("editnav",{ 'show': this.props.show })}>
-                <div className="close" onClick={this.handleHide}>X</div>
+                <div className="closeEditNav" onClick={this.handleHide}>X</div>
                 <div className="myChanel">
                     <ul className="myChanelHeader">
                         <span className="title">我的频道</span>
