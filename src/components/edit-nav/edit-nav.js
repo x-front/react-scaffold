@@ -25,13 +25,13 @@ export default React.createClass({
                 { text: '情感' },
             ],
             btnEditText : '编辑',
-            iconClose: false
+            iconClose: false,
         };
     },
     
     //隐藏菜单编辑面板
     handleHide(){
-        this.props.hide();
+        this.props.hide(this.state.myChannelList);
     },
 
     //点击我的频道编辑按钮
@@ -44,7 +44,7 @@ export default React.createClass({
         } else {
             this.setState({
                 btnEditText: '编辑',
-                iconClose: false
+                iconClose: false,
             });
         }
     },
@@ -108,11 +108,12 @@ export default React.createClass({
         });
     },
 
+    
 
     render() {
         let myChanelItem = this.state.myChannelList.map((item,index) => {
             return (
-                <span key={index} className="chanelWrap" onClick={this.editMyChannel}>
+                <span key={index} className={classNames("chanelWrap",{'curSelected':index === this.props.navCurrent})} onClick={this.editMyChannel}>
                     {item.text}
                     <label className={classNames("delChannel",{'iconClose':this.state.iconClose})}>X</label>
                 </span>
