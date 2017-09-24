@@ -51,6 +51,7 @@ export default React.createClass({
 
     //编辑我的频道
     editMyChannel(evl,idx){
+        
         if(this.state.btnEditText === '完成'){
             //获取当前点击的频道序号
             let curSelected = idx.split('$')[1]-0;
@@ -61,7 +62,7 @@ export default React.createClass({
                 return item;
             });
             //把当前点击的频道推入新的推荐频道数组
-            newSuggestChannel.push(deletedChannel);
+            newSuggestChannel.unshift(deletedChannel);
 
             //删除我的频道中当前点击的频道
             let newMyChannel = [];
