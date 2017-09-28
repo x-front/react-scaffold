@@ -4,21 +4,28 @@ import './news-small.less';
 
 export default React.createClass({
     render() {
-        return (
-            <section className="news-small">
-                <div className="left">
+        /*let newsitem = this.props.scontent.map((item,index) => {
+            return (
+                <div className="itemwrap">
+                    <div className="left">
                     <div className="title">
-                        习近平助推中国智慧渐成国际共识
+                        {this.state.title}
                     </div>
                     <div className="info">
-                        <span className="source">央广网</span>
-                        <div className="comment"><span>0</span><span>评论</span></div>
+                        <span className="source">{source}</span>
+                        <div className="comment"><span>{commentnum}}</span><span>评论</span></div>
                         <span className="forbid">x</span>
                     </div>
+                    </div>
+                    <div className="right">
+                        <img className="pic" src={imgsrc}/>
+                    </div>
                 </div>
-                <div className="right">
-                    <img className="pic" src="https://p1.pstatp.com/list/190x124/317300037562deb5a14e"/>
-                </div>
+            );
+        });*/
+        return (
+            <section className="news-small">
+                'newsitem'
             </section>
         );
     }
