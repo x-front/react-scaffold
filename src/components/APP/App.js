@@ -3,6 +3,7 @@ import NewsHeader from '../news-header';
 import NewsNav from '../news-nav';
 import NewsSmall from '../news-small'
 import NewsMultiple from '../news-multiple'
+import NewsList from '../news-list'
 import './App.less';
 
 export default React.createClass({
@@ -14,7 +15,7 @@ export default React.createClass({
                     source:'中国青年网',
                     commentnub:7,
                     posttime:'1分钟前',
-                    newstype:'multiple',
+                    type:'multiple',
                     imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
                 {
@@ -22,7 +23,7 @@ export default React.createClass({
                     source:'高品图像',
                     commentnub:2567,
                     posttime:'9分钟前',
-                    newstype:'multiple',
+                    type:'multiple',
                     imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
                 {
@@ -30,7 +31,7 @@ export default React.createClass({
                     source:'中国青年网',
                     commentnub:7,
                     posttime:'1分钟前',
-                    newstype:'multiple',
+                    type:'multiple',
                     imgsrc1:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e',
                     imgsrc2:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e',
                     imgsrc3:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
@@ -40,7 +41,7 @@ export default React.createClass({
                     source:'高品图像',
                     commentnub:2567,
                     posttime:'9分钟前',
-                    newstype:'multiple',
+                    type:'multiple',
                     imgsrc1:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e',
                     imgsrc2:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e',
                     imgsrc3:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
@@ -50,7 +51,7 @@ export default React.createClass({
                     source:'中国青年网',
                     commentnub:7,
                     posttime:'1分钟前',
-                    newstype:'small',
+                    type:'small',
                     imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
                 {
@@ -58,7 +59,7 @@ export default React.createClass({
                     source:'高品图像',
                     commentnub:2567,
                     posttime:'9分钟前',
-                    newstype:'small',
+                    type:'small',
                     imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
             ]
@@ -71,8 +72,7 @@ export default React.createClass({
                 <NewsHeader className="header"></NewsHeader>
                 <NewsNav className="nav"></NewsNav>
                 <div className="news-list">
-                    <NewsSmall></NewsSmall>
-                    <NewsMultiple></NewsMultiple>
+                    <NewsList newscontent={this.state.newslist}></NewsList>
                 </div>
             </section>
         );
