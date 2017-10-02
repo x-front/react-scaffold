@@ -5,20 +5,21 @@ import './news-list.less';
 
 export default React.createClass({
     render() {
-        let NewsSmallCon = [];
-        let NewsMultipleCon = [];
-        this.props.newscontent.forEach(function(element) {
+        let newsitem = this.props.newscontent.map((element,index) => {
             let newstype = element.type;
             if(newstype === 'small'){
-                NewsSmallCon.unshift(element);
+                return(
+                    <NewsSmall key={index} scontent={element}></NewsSmall>
+                )
             } else if(newstype === 'multiple') {
-                NewsMultipleCon.unshift(element);
+                return(
+                    <NewsMultiple  key={index} mcontent={element}></NewsMultiple>
+                )
             }
         });
         return (
             <section className="news-list">
-                <NewsSmall scontent={this.NewsSmallCon}></NewsSmall>
-                <NewsMultiple mcontent={this.NewsMultipleCon}></NewsMultiple>
+                {newsitem}
             </section>
         );
     },

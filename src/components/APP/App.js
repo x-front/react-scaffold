@@ -11,25 +11,26 @@ export default React.createClass({
         return {
             newslist: [
                 {
-                    title:'儿子身价过亿 父母靠种田生活：地荒了可惜',
+                    title:'1过亿 父母靠种田生活：地荒了可惜',
                     source:'中国青年网',
-                    commentnub:7,
+                    commentnum:7,
                     posttime:'1分钟前',
-                    type:'multiple',
-                    imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
+                    type:'small',
+                    imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e',
+                    content:'中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网中国青年网',
                 },
                 {
-                    title:'一张卫星图像不过瘾？来看卫星拍摄的中国',
+                    title:'2一张卫星图像不过瘾？来看卫星拍摄的中国',
                     source:'高品图像',
-                    commentnub:2567,
+                    commentnum:2567,
                     posttime:'9分钟前',
-                    type:'multiple',
+                    type:'small',
                     imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
                 {
-                    title:'儿子身价过亿 父母靠种田生活：地荒了可惜',
+                    title:'3儿子身价过亿 父母靠种田生活：地荒了可惜',
                     source:'中国青年网',
-                    commentnub:7,
+                    commentnum:7,
                     posttime:'1分钟前',
                     type:'multiple',
                     imgsrc1:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e',
@@ -37,9 +38,9 @@ export default React.createClass({
                     imgsrc3:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
                 {
-                    title:'一张卫星图像不过瘾？来看卫星拍摄的中国',
+                    title:'4一张卫星图像不过瘾？来看卫星拍摄的中国',
                     source:'高品图像',
-                    commentnub:2567,
+                    commentnum:2567,
                     posttime:'9分钟前',
                     type:'multiple',
                     imgsrc1:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e',
@@ -47,21 +48,14 @@ export default React.createClass({
                     imgsrc3:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
                 {
-                    title:'儿子身价过亿 父母靠种田生活：地荒了可惜',
+                    title:'5儿子身价过亿 父母靠种田生活：地荒了可惜',
                     source:'中国青年网',
-                    commentnub:7,
+                    commentnum:7,
                     posttime:'1分钟前',
                     type:'small',
                     imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
-                {
-                    title:'一张卫星图像不过瘾？来看卫星拍摄的中国',
-                    source:'高品图像',
-                    commentnub:2567,
-                    posttime:'9分钟前',
-                    type:'small',
-                    imgsrc:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
-                },
+
             ]
         };
     },

@@ -27,8 +27,8 @@ function bootstrap() {
 
     render(
         (<Router>
-            <Route path="/" component={App}> />
-            </Route>
+            <Route path="/" component={App}> /></Route>
+            <Route path="/landing-mix" component={landing-mix}> /></Route>
           </Router>), document.getElementById('react_container')
         );
 }

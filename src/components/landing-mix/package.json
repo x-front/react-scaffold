@@ -1,0 +1,6 @@
+{
+  "name": "news-small",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./news-small.js"
+}
