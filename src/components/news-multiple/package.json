@@ -1,6 +1,0 @@
-{
-  "name": "news-multiple",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./news-multiple.js"
-}

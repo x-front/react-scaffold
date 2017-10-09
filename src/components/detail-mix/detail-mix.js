@@ -1,6 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
-import './news-small.less';
+import './detail-mix.less';
 
 export default React.createClass({
     render() {

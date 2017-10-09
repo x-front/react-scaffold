@@ -9,11 +9,11 @@ export default React.createClass({
             let newstype = element.type;
             if(newstype === 'small'){
                 return(
-                    <NewsSmall key={index} scontent={element}></NewsSmall>
+                    <ListSmall key={index} scontent={element}></ListSmall>
                 )
             } else if(newstype === 'multiple') {
                 return(
-                    <NewsMultiple  key={index} mcontent={element}></NewsMultiple>
+                    <ListMultiple  key={index} mcontent={element}></ListMultiple>
                 )
             }
         });

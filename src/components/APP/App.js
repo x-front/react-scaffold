@@ -9,7 +9,7 @@ import './App.less';
 export default React.createClass({
     getInitialState (){
         return {
-            newslist: [
+            news: [
                 {
                     title:'1过亿 父母靠种田生活：地荒了可惜',
                     source:'中国青年网',
@@ -38,6 +38,7 @@ export default React.createClass({
                     imgsrc3:'https://p1.pstatp.com/list/190x124/317300037562deb5a14e'
                 },
                 {
+                    id:4,
                     title:'4一张卫星图像不过瘾？来看卫星拍摄的中国',
                     source:'高品图像',
                     commentnum:2567,
@@ -66,7 +67,7 @@ export default React.createClass({
                 <NewsHeader className="header"></NewsHeader>
                 <NewsNav className="nav"></NewsNav>
                 <div className="news-list">
-                    <NewsList newscontent={this.state.newslist}></NewsList>
+                    <NewsList newscontent={this.state.news}></NewsList>
                 </div>
             </section>
         );

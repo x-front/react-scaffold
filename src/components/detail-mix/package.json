@@ -1,0 +1,6 @@
+{
+  "name": "detail-mix",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./detail-mix.js"
+}

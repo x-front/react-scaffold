@@ -1,0 +1,6 @@
+{
+  "name": "list-multiple",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./list-multiple.js"
+}
