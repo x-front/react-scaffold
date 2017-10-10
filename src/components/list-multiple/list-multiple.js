@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import './news-multiple.less';
+import './list-multiple.less';
 
 export default React.createClass({
     render() {

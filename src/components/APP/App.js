@@ -1,8 +1,6 @@
 import React from 'react';
 import NewsHeader from '../news-header';
 import NewsNav from '../news-nav';
-import NewsSmall from '../news-small'
-import NewsMultiple from '../news-multiple'
 import NewsList from '../news-list'
 import './App.less';
 

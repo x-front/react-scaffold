@@ -1,10 +1,10 @@
 import React from 'react';
-import './detail-mix.less';
+import './detail-pic.less';
 
 export default React.createClass({
     render() {
         return (
-            <section className="detail-mix">
+            <section className="detail-pic">
                 <h1 className="title"></h1>
                 <div className="info">
                     <div className="left">

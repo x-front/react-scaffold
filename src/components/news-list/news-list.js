@@ -1,6 +1,6 @@
 import React from 'react';
-import NewsSmall from '../news-small'
-import NewsMultiple from '../news-multiple'
+import ListSmall from '../list-small'
+import ListMultiple from '../list-multiple'
 import './news-list.less';
 
 export default React.createClass({
@@ -13,7 +13,7 @@ export default React.createClass({
                 )
             } else if(newstype === 'multiple') {
                 return(
-                    <ListMultiple  key={index} mcontent={element}></ListMultiple>
+                    <ListMultiple key={index} mcontent={element}></ListMultiple>
                 )
             }
         });

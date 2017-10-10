@@ -1,19 +1,15 @@
 import React from 'react';
-import DetailMix from './detail-mix'
+import DetailMix from '../detail-mix'
+import DetailPic from '../detail-pic'
 import './detail.less';
 
 export default React.createClass({
     render() {
-        let detail = this.props.newscontent.map((element,index) => {
-            let newstype = element.type;
-            if(newstype === 'small'){
-                return(
-                    <DetailMix key={index} scontent={element}></DetailMix>
-                )
-            }
-        });
-        return (
-            {detail}
-        );
+        let newsid = this.props.location.query.id;
+        let newstype = this.props.location.query.type;
+        console.log(this.props.location.query);
+        return(
+                <DetailMix key={newsid}></DetailMix>
+            ) 
     }
 });

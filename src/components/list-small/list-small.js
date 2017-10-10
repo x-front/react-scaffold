@@ -1,28 +1,28 @@
 import React from 'react';
-import detail from '../detail'
-import './news-small.less';
+import { Link } from 'react-router';
+import './list-small.less';
 
 export default React.createClass({
     render() {
         let item = this.props.scontent;
-        let itemid = this.props.key
+        let itemid = '1';
         return (
-            <li className="list-small">
-                <link to="detail-mix" param={{id:itemid}}></link>
-                <div className="left">
-                    <div className="title">
-                        {item.title}
-                    </div>
-                    <div className="info">
-                        <span className="source">{item.source}</span>
-                        <div className="comment"><span>{item.commentnum}</span><span>评论</span></div>
-                        <span className="forbid">x</span>
-                    </div>
-                </div>
-                <div className="right">
-                    <img className="pic" src={item.imgsrc}/>
-                </div>
-            </li>
+                    <li className="list-small">
+                        <div className="left">
+                            <div className="title">
+                                <Link to={{ pathname:'/detail',query:{id:'1',type:'mix'} }}>{item.title}</Link>
+                            </div>
+                            <div className="info">
+                                <span className="source">{item.source}</span>
+                                <div className="comment"><span>{item.commentnum}</span><span>评论</span></div>
+                                <span className="forbid">x</span>
+                            </div>
+                        </div>
+                        <div className="right">
+                            <img className="pic" src={item.imgsrc}/>
+                        </div>
+                    </li>
+            
         );
     }
 });
