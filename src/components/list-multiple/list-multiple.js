@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router';
 import './list-multiple.less';
 
 export default React.createClass({
@@ -7,7 +8,9 @@ export default React.createClass({
         let newsitem = this.props.mcontent;
         return (
             <section className="news-multiple">
-                <div className="title">{newsitem.title}</div>
+                <div className="title">
+                    {newsitem.title}
+                </div>
                 <div className="newsimage">
                     <img className="pic" src={newsitem.imgsrc1}/>
                     <img className="pic" src={newsitem.imgsrc2}/>

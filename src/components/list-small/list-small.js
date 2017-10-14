@@ -10,7 +10,7 @@ export default React.createClass({
                     <li className="list-small">
                         <div className="left">
                             <div className="title">
-                                <Link to={{ pathname:'/detail',query:{id:'1',type:'mix'} }}>{item.title}</Link>
+                                <Link to={{ path:'/detail'}} >{item.title}</Link>
                             </div>
                             <div className="info">
                                 <span className="source">{item.source}</span>

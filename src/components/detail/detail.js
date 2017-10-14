@@ -11,5 +11,8 @@ export default React.createClass({
         return(
                 <DetailMix key={newsid}></DetailMix>
             ) 
+    },
+    componentDidMount() {
+        console.log(this.props.location.query);
     }
 });
