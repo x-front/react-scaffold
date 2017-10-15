@@ -7,22 +7,27 @@ export default React.createClass({
         let item = this.props.scontent;
         let id = '2';
         return (
-                    <li className="list-small">
-                        <div className="left">
+                <li className="list-small">
+                    <div className="left">
                             <div className="title">
                                 <Link to={{ pathname:'/detail',search:`?id=${id}` }}>{item.title}</Link>
                             </div>
                             <div className="info">
                                 <span className="source">{item.source}</span>
-                                <div className="comment"><span>{item.commentnum}</span><span>评论</span></div>
+                                <div className="comment"><span>{item.commentnum}</span><span>评论</span>
                                 <span className="forbid">x</span>
                             </div>
                         </div>
-                        <div className="right">
-                            <img className="pic" src={item.imgsrc}/>
+                        <div className="info">
+                            <span className="source">{item.source}</span>
+                            <div className="comment"><span>{item.commentnum}</span><span>评论</span></div>
+                            <span className="forbid">x</span>
                         </div>
-                    </li>
-            
+                    </div>
+                    <div className="right">
+                        <img className="pic" src={item.imgsrc}/>
+                    </div>
+                </li>
         );
     }
 });
