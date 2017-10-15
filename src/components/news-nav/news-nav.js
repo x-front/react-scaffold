@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import EditNav from '../edit-nav';
+//import { NavLink } from 'react-router-dom';
+import Link from 'react-router'
 import './news-nav.less';
 
 
@@ -10,20 +12,62 @@ export default React.createClass({
             currentSelected: 0,
             show: false,
             navlist : [
-                { text: '推荐' },
-                { text: '视频' },
-                { text: '社会' },
-                { text: '图片' },
-                { text: '娱乐' },
-                { text: '问答' },
-                { text: '科技' },
-                { text: '汽车' },
-                { text: '财经' },
-                { text: '军事' },
-                { text: '体育' },
-                { text: '段子' },
-                { text: '美女' },
-                { text: '国际' },
+                { 
+                    text: '推荐',
+                    path: 'home' 
+                },
+                { 
+                    text: '视频',
+                    path: 'video' 
+                },
+                { 
+                    text: '视频',
+                    path: 'social' 
+                },
+                { 
+                    text: '图片',
+                    path: 'image' 
+                },
+                { 
+                    text: '娱乐',
+                    path: 'entertainment' 
+                },
+                { 
+                    text: '问答',
+                    path: 'ask' 
+                },
+                { 
+                    text: '科技',
+                    path: 'science' 
+                },
+                { 
+                    text: '汽车',
+                    path: 'car' 
+                },
+                { 
+                    text: '财经',
+                    path: 'finance' 
+                },
+                { 
+                    text: '军事',
+                    path: 'military' 
+                },
+                { 
+                    text: '体育',
+                    path: 'gym' 
+                },
+                { 
+                    text: '段子',
+                    path: 'joke' 
+                },
+                { 
+                    text: '美女',
+                    path: 'girl' 
+                },
+                { 
+                    text: '国际',
+                    path: 'world' 
+                },
             ]
         };
     },
@@ -51,7 +95,9 @@ export default React.createClass({
         //console.log(this.props.navlist);
         let navitem = this.state.navlist.map((item, index) => {
             return (
+                //<li key={index} onClick={this.changeCurrent} className={classNames({ 'current': index === this.state.currentSelected })}><Link to={{ pathname:'/${item.path}',search:`?id=${id}` }}>{item.text}</Link></li>
                 <li key={index} onClick={this.changeCurrent} className={classNames({ 'current': index === this.state.currentSelected })}>{item.text}</li>
+                //<NavLink to={`/${item.path}`} activeClassName="current">{item.text}</NavLink>
             );
         });
 

@@ -5,12 +5,12 @@ import './list-small.less';
 export default React.createClass({
     render() {
         let item = this.props.scontent;
-        let itemid = '1';
+        let id = '2';
         return (
                     <li className="list-small">
                         <div className="left">
                             <div className="title">
-                                <Link to={{ path:'/detail'}} >{item.title}</Link>
+                                <Link to={{ pathname:'/detail',search:`?id=${id}` }}>{item.title}</Link>
                             </div>
                             <div className="info">
                                 <span className="source">{item.source}</span>

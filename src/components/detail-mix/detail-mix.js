@@ -27,7 +27,6 @@ export default React.createClass({
                         <p></p>
                     </div>
                 </div>
-                <div className="comment"></div>
             </section>
         );
     }
