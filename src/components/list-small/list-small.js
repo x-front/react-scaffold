@@ -10,18 +10,13 @@ export default React.createClass({
                 <li className="list-small">
                     <div className="left">
                             <div className="title">
-                                <Link to={{ pathname:'/detail',search:`?id=${id}` }}>{item.title}</Link>
+                                <Link to="/detail" query={{ id:1 }}>{item.title}</Link>
                             </div>
                             <div className="info">
                                 <span className="source">{item.source}</span>
                                 <div className="comment"><span>{item.commentnum}</span><span>评论</span>
                                 <span className="forbid">x</span>
                             </div>
-                        </div>
-                        <div className="info">
-                            <span className="source">{item.source}</span>
-                            <div className="comment"><span>{item.commentnum}</span><span>评论</span></div>
-                            <span className="forbid">x</span>
                         </div>
                     </div>
                     <div className="right">
