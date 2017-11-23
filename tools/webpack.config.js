@@ -114,6 +114,8 @@ const config = {
       }, {
         test: /\.(eot|ttf|wav|mp3)$/,
         loader: 'file-loader',
+      }, { 
+        test: /\.css$/, loader: 'style-loader!css-loader' 
       },
     ],
   },

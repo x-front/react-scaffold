@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsHeader from '../news-header';
 import NewsNav from '../news-nav';
-import NewsList from '../news-list'
+import NewsList from '../news-list';
 import './App.less';
 
 export default React.createClass({

@@ -48,6 +48,7 @@
   "dependencies": {
     "babel-core": "5.8.34",
     "classnames": "^2.2.3",
+    "css-loader": "^0.23.1",
     "fastclick": "^1.0.6",
     "history": "^1.17.0",
     "mobile-detect": "^1.3.1",
